@@ -1,0 +1,41 @@
+COVID SAFE PROJECT
+
+
+MODEL Asscoaitions 
+
+USER-
+has_many establishments
+has_many establishments through reviews
+has_many reviews
+........
+username
+password
+
+
+REVIEW- (join)
+belongs_to User 
+belongs_to establishement
+.........
+content
+Establishment_id
+good_air_ventilation - rating 0-5
+Staff are wearing masks and practicing safe covid protocols 0-5
+seats are far apart- rating 0-5
+additional comments 
+
+
+ESTABLISHMENT- 
+has_many reviews
+has_many users  
+has_many users through reviews 
+
+(maybe belongs_to a category)
+..............
+name
+location 
+
+
+CATEGORY(MAYBE ADD LATER)
+has_many establishments
+.........
+name
