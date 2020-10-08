@@ -1,2 +1,4 @@
 class User < ApplicationRecord
-end
+    has_many :reviews
+    has_many :establishments, through: :reviews
+end 
