@@ -2,6 +2,7 @@ class EstablishmentsController < ApplicationController
 
     def new
       @establishment = Establishment.new  
+      @establishment.build_category
     end 
 
     def create
