@@ -1,4 +1,5 @@
-<h1>NYC ESTABLISHMENTS</h1>
+<h1>NYC PLACES</h1>
     <% @establishments.each do |e| %>
       <li> <%= link_to e.name, establishment_path(e)%></li>
+           <%= e.category.name%>
     <% end %>

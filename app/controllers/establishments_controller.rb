@@ -12,9 +12,10 @@ class EstablishmentsController < ApplicationController
     def create
       @establishment = Establishment.new(establishment_params)
       @establishment.user_id = session[:user_id]
-      if @establishment.save
+      if @establishment.save && @establishment.name != ""
         redirect_to establishment_path(@establishment)
       else 
+        flash[:error] = "New Entry must have a name and an estblishment type."
         render :new 
       end 
     end 
