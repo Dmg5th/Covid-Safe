@@ -1,0 +1,4 @@
+<h1>NYC ESTABLISHMENTS</h1>
+    <% @establishments.each do |e| %>
+      <li> <%= link_to e.name, establishment_path(e)%></li>
+    <% end %>
