@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'sessions#welcome'
   resources :reviews
   resources :establishments
   resources :categories
@@ -6,6 +7,6 @@ Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-# root to: 'users#new'
+
 
 end
