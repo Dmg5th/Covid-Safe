@@ -4,8 +4,8 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-      @establishment = Establishment.find_by(id: params[:id])
-    #   @review = @establishment.build_review
+      @establishment = Establishment.find_by(id: params[:establishment_id] )
+      @review = @establishment.reviews.build
     end 
 
 

@@ -1,5 +1,5 @@
 <h1>Make a new Review!(Be kind)</h1> 
-    <%= form_for :review do |f| %>
+    <%= form_for @review do |f| %>
     <p>Rate the following prompts from 0-5</p>
     <div>
         <%= f.label :is_there_good_air_ventilation? %>
@@ -24,6 +24,7 @@
         <%= f.label :additional_comments %>
         <%= f.text_field :additional_comments %>
     </div>
+    <%= f.hidden_field :establishment_id %>
 
     
     
