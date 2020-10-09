@@ -1,1 +1,39 @@
-<h1>Make a new Review!(Be kind)</h1>
+<h1>Make a new Review!(Be kind)</h1> 
+    <%= form_for :review do |f| %>
+    <p>Rate the following prompts from 0-5</p>
+    <div>
+        <%= f.label :is_there_good_air_ventilation? %>
+        <%= f.number_field :good_air_ventilation %>
+    </div>
+    <div>
+        <%= f.label :do_the_staff_practice_safe_covid_protocols?%>
+        <%= f.number_field :staff_practicing_safe_covid_protocols %>
+    </div>
+    <div>
+        <%= f.label :are_the_seats_far_apart?%>
+        <%= f.number_field :seats_far_apart %>
+    </div> <br>
+    Check the box if yes
+    <br>
+    <div>
+        <%= f.label :outside_seating%>
+        <%= f.check_box :outside_seating %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :additional_comments %>
+        <%= f.text_field :additional_comments %>
+    </div>
+
+    
+    
+    <br>
+    <%= f.submit "Submit Review" %>
+
+    <% end %>
+
+
+
+
+
+
