@@ -13,7 +13,7 @@ class EstablishmentsController < ApplicationController
 
 private 
     def establishment_params
-      params.require(:establishment).permit(:name, :location)
+      params.require(:establishment).permit(:name, :location, :category_id)
     end 
 
 

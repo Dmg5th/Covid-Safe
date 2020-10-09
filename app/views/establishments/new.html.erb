@@ -1,2 +1,21 @@
 <h1>Add a new NYC establishment to the list!</h1>
 
+<%= form_for @establishment do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <br>
+    <div>
+        <%= f.label :neighborhood %>
+        <%= f.text_field :location %>
+    </div>
+    <br>
+    <p>Select the type of Establishment</p>
+
+
+    <p>Create a new type of establishment if not featured above</p>
+   
+    <br>
+    <%= f.submit %>
+<% end %>

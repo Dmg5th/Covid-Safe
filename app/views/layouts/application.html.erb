@@ -10,8 +10,9 @@
   </head>
 
   <div>
-    <%= link_to "Log Out", logout_path, method: :delete %>
-    <%= link_to "Create New Establishment", new_establishment_path%>
+    ⎮<%= link_to "Home", root_path %>⎮
+    ⎮<%= link_to "Add a New Establishment", new_establishment_path%>⎮
+    
 
   </div>
 
@@ -19,5 +20,10 @@
     <%= yield %>
   </body>
 </html>
+
+<footer>
+<br><br>
+⎮<%= link_to "Log Out", logout_path, method: :delete %>⎮
+</footer>
 
 
