@@ -7,7 +7,7 @@ class EstablishmentsController < ApplicationController
     def create
     end 
 
-    def show
+    def show 
     end 
 
 

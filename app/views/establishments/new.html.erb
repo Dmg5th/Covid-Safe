@@ -5,17 +5,23 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
     </div>
-    <br>
     <div>
         <%= f.label :neighborhood %>
         <%= f.text_field :location %>
     </div>
-    <br>
     <p>Select the type of Establishment</p>
-
-
+    <div>
+        <%= f.collection_select :category_id, Category.all, :id, :name %>
+    </div>
     <p>Create a new type of establishment if not featured above</p>
-   
+    <div>
+        <%= f.fields_for :category do |c| %>
+            <%= c.label :name %>
+            <%= c.text_field :name %>
+        <% end %>
+    </div>
+    
+    
     <br>
     <%= f.submit %>
 <% end %>
