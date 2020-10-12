@@ -15,7 +15,6 @@ class EstablishmentsController < ApplicationController
       if @establishment.save && @establishment.name != ""
         redirect_to establishment_path(@establishment)
       else 
-        flash[:error] = "New Entry must have a name and an estblishment type."
         render :new 
       end 
     end 
