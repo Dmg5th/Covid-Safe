@@ -9,8 +9,8 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-      # byebug
       @review = Review.new(review_params)
+      @review = current_user.reviews.build(review_params)
       if @review.save
       redirect_to review_path(@review)
       else 
