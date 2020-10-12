@@ -1,4 +1,4 @@
-<h1>Make a new Review!(Be kind)</h1> 
+<h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
     <%= form_for @review do |f| %>
     <p>Rate the following prompts from 0-5</p>
     <div>
@@ -13,16 +13,11 @@
         <%= f.label :are_the_seats_far_apart?%>
         <%= f.number_field :seats_far_apart, min:0, max:5 %>
     </div> <br>
-    Check the box if this venue has comfortable outside seating
+    Check the box if this venue has comfortable outside seating <%= f.check_box :outside_seating %>
     <br>
     <div>
-        <!-- <%= f.label :outside_seating%> -->
-        <%= f.check_box :outside_seating %>
-    </div>
-    <br>
-    <div>
-        <%= f.label :additional_comments %>
-        <%= f.text_area :additional_comments %>
+       Additional comments 
+        <%= f.text_area :additional_comments, size: "25x10" %>
     </div>
     <%= f.hidden_field :establishment_id %>
 
