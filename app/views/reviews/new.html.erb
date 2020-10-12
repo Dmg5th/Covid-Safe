@@ -1,9 +1,13 @@
-<% if params[:establishment_id] %>
-    <h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
-<% else %>
-    <h1>Create a new review!</h1>
-<% end %>
-    <%= form_for @review do |f| %>
+<%= form_for @review do |f| %>
+    <% if params[:establishment_id] %>
+        <h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
+        <%= f.hidden_field :establishment_id %>
+    <% else %>
+        <h1>Create a new review!</h1>
+        <div> <strong>Select a place to review from the dropdown</strong>
+            <%= f.collection_select :establishment_id, Establishment.all, :id, :name, include_blank: true %>
+        </div>
+    <% end %>
     <p>Rate the following prompts from 0-5</p>
     <div>
         <%= f.label :is_there_good_air_ventilation? %>
@@ -23,14 +27,9 @@
        Additional comments 
         <%= f.text_area :additional_comments, size: "25x10" %>
     </div>
-    <%= f.hidden_field :establishment_id %>
-
-    
-    
-    <br>
+   <br>
     <%= f.submit "Submit Review" %>
-
-    <% end %>
+<% end %>
 
 
 
