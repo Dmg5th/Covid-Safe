@@ -1,6 +1,6 @@
 <h1>All Reviews </h1>
 <ul>
 <% @reviews.each do |r| %>
-   <li><%= r.establishment.name  %></li> 
+   <li><%= link_to r.establishment.name, review_path(r)  %></li> 
 <% end %>
 </ul>
