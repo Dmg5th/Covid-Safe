@@ -7,7 +7,7 @@
     <% else %>
         <h1>Create a new review!</h1>
         <div> <strong>Select the establishment</strong>
-            <%= f.collection_select :establishment_id, Establishment.all, :id, :name_and_category, include_blank: true %>
+            <%= f.collection_select :establishment_id, Establishment.alpha, :id, :name_and_category, include_blank: true %>
         </div>
     <% end %> 
     <p>Rate the following prompts from 0-5</p>
@@ -25,6 +25,10 @@
     </div> <br>
     Check the box if this venue has comfortable outside seating <%= f.check_box :outside_seating %>
     <br>
+    <div>
+        <%= f.label :overall_rating%>
+        <%= f.number_field :overall_rating, min:0, max:5 %>
+    </div> <br>
     <div>
        Additional comments 
         <%= f.text_area :additional_comments, size: "25x10" %>

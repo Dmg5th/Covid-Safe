@@ -7,7 +7,9 @@ class Establishment < ApplicationRecord
     validates :name, presence: true
     validate :not_a_duplicate#try to come up with custom validation for this 
     
-   
+   def self.alpha
+      order(:name)
+   end 
 
 
     def category_attributes=(attributes)
@@ -21,7 +23,7 @@ class Establishment < ApplicationRecord
     end 
 
     def name_and_category
-      "#{name} - #{category.name} "
+      "#{self.name} - #{self.category.name} "
     end 
 
 
