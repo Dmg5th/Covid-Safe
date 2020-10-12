@@ -1,4 +1,8 @@
-<h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
+<% if params[:establishment_id] %>
+    <h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
+<% else %>
+    <h1>Create a new review!</h1>
+<% end %>
     <%= form_for @review do |f| %>
     <p>Rate the following prompts from 0-5</p>
     <div>
