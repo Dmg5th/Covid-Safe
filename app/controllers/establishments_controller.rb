@@ -1,7 +1,7 @@
 class EstablishmentsController < ApplicationController
 
     def index
-      @establishments = Establishment.order_by_rating
+      @establishments = Establishment.order_by_rating.includes(:category)#not really sure about the includes here
     end 
     
     def new
