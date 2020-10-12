@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
+
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth' 
   
   resources :reviews
   resources :establishments do 
