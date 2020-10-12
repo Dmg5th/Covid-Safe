@@ -6,7 +6,9 @@ class Establishment < ApplicationRecord
     # accepts_nested_attributes_for :category
     validates :name, presence: true
     validate :not_a_duplicate#try to come up with custom validation for this 
-    
+    scope :order_by_rating, -> {joins(:reviews).group(:id).order('avg(overall_rating) desc')}
+
+
    def self.alpha
       order(:name)
    end 

@@ -1,5 +1,5 @@
 <h1>NYC PLACES</h1>
     <% @establishments.each do |e| %>
-      <h2> <%= e.name %> - <%= e.category.name%> <%= link_to "Add a Review", new_establishment_review_path(e)%></h2> 
+      <h2> <%= e.name %> - <%= e.category.name%><%= link_to "Add a Review", new_establishment_review_path(e)%></h2> 
            
     <% end %>

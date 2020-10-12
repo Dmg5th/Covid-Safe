@@ -1,7 +1,7 @@
 class EstablishmentsController < ApplicationController
 
     def index
-      @establishments = Establishment.all
+      @establishments = Establishment.order_by_rating
     end 
     
     def new
