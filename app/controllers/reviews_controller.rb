@@ -1,7 +1,12 @@
 class ReviewsController < ApplicationController
 
     def index
-      @reviews = Review.all
+      if params[:establishment_id]
+        @establishment = Establishment.find_by(id: params[:establishment_id])
+        @reviews = @establishment.reviews 
+      else 
+        @reviews = Review.all
+      end 
     end 
 
     def new
