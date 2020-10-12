@@ -7,9 +7,9 @@
     <% else %>
         <h1>Create a new review!</h1>
         <div> <strong>Select the establishment</strong>
-            <%= f.collection_select :establishment_id, Establishment.all, :id, :name, include_blank: true %>
+            <%= f.collection_select :establishment_id, Establishment.all, :id, :name_and_category, include_blank: true %>
         </div>
-    <% end %>
+    <% end %> 
     <p>Rate the following prompts from 0-5</p>
     <div>
         <%= f.label :is_there_good_air_ventilation? %>
