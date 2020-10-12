@@ -1,6 +1,6 @@
 <h1>Add a new NYC place to the list!</h1>
 
-<%= render 'layouts/errors', locals: {object: @establishment } %>
+<%= render partial: 'layouts/errors', locals: {object: @establishment} %>
 
 <%= form_for @establishment do |f| %>
     <div>
@@ -13,7 +13,7 @@
     </div>
     <p>Select the type of Establishment</p>
     <div>
-        <%= f.collection_select :category_id, Category.all, :id, :name %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true  %>
     </div>
     <p>Create a new type of establishment if not featured above</p>
     <div>
