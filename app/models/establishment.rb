@@ -5,7 +5,7 @@ class Establishment < ApplicationRecord
     has_many :users, through: :reviews 
     # accepts_nested_attributes_for :category
     validates :name, presence: true
-    # validate: not_a_duplicate
+    validate :not_a_duplicate
    
 
 
@@ -14,7 +14,9 @@ class Establishment < ApplicationRecord
     end 
 
     def not_a_duplicate
-      Establishment.find_by()
+      if Establishment.find_by(name: name, category_id: category_id)
+        errors.add(:name, 'has already been added')
+      end 
     end 
 
 
