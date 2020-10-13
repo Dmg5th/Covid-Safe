@@ -7,12 +7,11 @@ class Establishment < ApplicationRecord
     validates :name, presence: true
     validate :not_a_duplicate#try to come up with custom validation for this 
     scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(overall_rating) desc')}#scope method that I may or may not keep 
+    scope :search, ->(query) { where("LOWER(name) LIKE ?", "%#{query.downcase}%")}
 
-
-   def self.alpha
+    def self.alpha
       order(:name)
-   end 
-
+    end 
 
     def category_attributes=(attributes)
       category = Category.find_or_create_by(attributes) if !attributes[:name].empty?

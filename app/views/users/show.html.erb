@@ -2,4 +2,4 @@
 <p>Here's a list of your reviews:</p>
     <% @user.reviews.each do |review| %>
         <li><%= link_to review.establishment.name, review_path(review)%>⎮⎮ <%= link_to "Edit your review", edit_review_path(review)%></li>
-    <% end %>
+    <% end %> 

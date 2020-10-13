@@ -25,6 +25,14 @@ class EstablishmentsController < ApplicationController
       redirect_to establishments_path if !@establishment
     end 
 
+    def search 
+    end 
+
+    def results
+      @establishments = Establishment.search(params[:q])
+      render :index
+    end 
+
 
 private 
     def establishment_params

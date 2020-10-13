@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get '/auth/google_oauth2/callback' => 'sessions#omniauth' 
+
+  get '/establishments/search', to: 'establishments#search'
+  post '/search', to: 'establishments#results'
   
   resources :reviews
   resources :establishments do 
