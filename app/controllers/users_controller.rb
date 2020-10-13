@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+    before_action :require_login, only:[:index, :show]
+
+    def index
+     @user = User.all
+    end 
 
     def new
       @user = User.new 
@@ -15,7 +20,6 @@ class UsersController < ApplicationController
     end 
 
     def show
-      require_login
       @user = User.find_by(id: params[:id])
       redirect_to '/' if !@user 
     end 

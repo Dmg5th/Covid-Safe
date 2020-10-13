@@ -20,7 +20,9 @@ class EstablishmentsController < ApplicationController
       end 
     end 
 
-    def show 
+    def show
+      @establishment = Establishment.find_by(id: params[:id])
+      redirect_to establishments_path if !@establishment
     end 
 
 
