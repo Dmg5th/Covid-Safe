@@ -1,4 +1,12 @@
 <h1>NYC PLACES</h1>
+
+<p><%= flash[:error] %></p><br>
+
+<%= form_with url:"/search", local: :true do |f| %>
+    <%= f.label "Search:"%>
+    <%= f.text_field :q%>
+    <%= f.submit "Search"%>
+<% end %>
     <% @establishments.each do |e| %>
       <h2> <%= link_to e.name, establishment_reviews_path(e)  %> - <%= e.category.name%> </h2> 
   <% end %>
