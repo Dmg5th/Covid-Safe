@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     end 
 
     def show
+      require_login
       @user = User.find_by(id: params[:id])
       redirect_to '/' if !@user 
     end 

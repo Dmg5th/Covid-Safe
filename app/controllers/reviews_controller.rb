@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_login, only:[:new, :create]
 
     def index
       if @establishment = Establishment.find_by(id: params[:establishment_id])

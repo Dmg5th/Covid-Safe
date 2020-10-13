@@ -1,1 +1,5 @@
 <h1> Welcome <%= @user.username %>! </h1>
+<p>Here's a list of your reviews:</p>
+    <% @user.reviews.each do |review| %>
+        <% review.establishment.name %>
+    <% end %>

@@ -1,4 +1,5 @@
 class EstablishmentsController < ApplicationController
+    before_action :require_login, only:[:new, :create]
 
     def index
       @establishments = Establishment.order_by_rating.includes(:category)#not really sure about the includes here
