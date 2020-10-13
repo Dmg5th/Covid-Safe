@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :require_login, only:[:new, :create]
+  before_action :set_review, only:[:show, :edit, :update, :delete]
+  
 
     def index
       if @establishment = Establishment.find_by(id: params[:establishment_id])
@@ -28,8 +30,19 @@ class ReviewsController < ApplicationController
     end 
 
     def show
-      @review = Review.find_by(id: params[:id])
-      redirect_to reviews_path if !@review
+      redirect_to_reviews
+    end 
+
+    def edit
+      redirect_to_reviews
+    end 
+
+    def update
+      @review.update(review_params)
+      redirect_to review_path(@review)
+    end 
+
+    def delete
     end 
 
   private
@@ -37,7 +50,13 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:good_air_ventilation, :staff_practicing_safe_covid_protocols, :seats_far_apart, :outside_seating, :additional_comments, :overall_rating, :establishment_id )
     end 
+
+    def set_review
+      @review = Review.find_by(id: params[:id])
+    end 
+
+    def redirect_to_reviews
+      redirect_to reviews_path if !@review
+    end 
     
-
-
 end

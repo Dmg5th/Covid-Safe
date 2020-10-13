@@ -1,41 +1,4 @@
-<%= render partial: 'layouts/errors', locals: {object: @review } %>
-
-<%= form_for @review do |f| %>
-    <% if params[:establishment_id] %>
-        <h1>Make a new Review for <%= @review.establishment.name%>(Be kind)</h1> 
-        <%= f.hidden_field :establishment_id %>
-    <% else %>
-        <h1>Create a new review!</h1>
-        <div> <strong>Select the establishment</strong>
-            <%= f.collection_select :establishment_id, Establishment.alpha, :id, :name_and_category, include_blank: true %>
-        </div>
-    <% end %> 
-    <p>Rate the following prompts from 0-5</p>
-    <div>
-        <%= f.label :is_there_good_air_ventilation? %>
-        <%= f.number_field :good_air_ventilation, min:0, max:5 %>
-    </div>
-    <div>
-        <%= f.label :do_the_staff_practice_safe_covid_protocols?%>
-        <%= f.number_field :staff_practicing_safe_covid_protocols, min:0, max:5 %>
-    </div>
-    <div>
-        <%= f.label :are_the_seats_far_apart?%>
-        <%= f.number_field :seats_far_apart, min:0, max:5 %>
-    </div> <br>
-    Check the box if this venue has comfortable outside seating <%= f.check_box :outside_seating %>
-    <br><br>
-    <div>
-        <strong><%= f.label :overall_rating%></strong>
-        <%= f.number_field :overall_rating, min:0, max:5 %>
-    </div> <br>
-    <div>
-       Additional comments 
-        <%= f.text_area :additional_comments, size: "25x10" %>
-    </div>
-   <br>
-    <%= f.submit "Submit Review" %>
-<% end %>
+<%= render partial: 'form' %>
 
 
 
