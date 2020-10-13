@@ -9,3 +9,10 @@
     <%= link_to "Log In with Google", '/auth/google_oauth2' %> to make a review or add a new establishment
 </p> 
 <% end %>
+
+<h2>CATEGORIES</h2>
+<% @categories.each do |c| %>
+<!-- <img alt="Qries" src="https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+width=150" height="70"> -->
+    <%= link_to c.name, category_path(c)%>
+<% end %>

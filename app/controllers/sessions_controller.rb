@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
     def welcome
+      @categories = Category.all 
     end 
 
     def new
