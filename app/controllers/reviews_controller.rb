@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :require_login, only:[:new, :create]
-  before_action :set_review, only:[:show, :edit, :update, :delete]
+  before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
+  before_action :set_review, only:[:show, :edit, :update, :destroy]
   
 
     def index
@@ -42,7 +42,9 @@ class ReviewsController < ApplicationController
       redirect_to review_path(@review)
     end 
 
-    def delete
+    def destroy
+      @review.destroy
+      redirect_to user_path(current_user)
     end 
 
   private
