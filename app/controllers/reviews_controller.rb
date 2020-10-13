@@ -3,9 +3,9 @@ class ReviewsController < ApplicationController
 
     def index
       if @establishment = Establishment.find_by(id: params[:establishment_id])
-        @reviews = @establishment.reviews 
+        @reviews = @establishment.reviews #nested
       else 
-        @reviews = Review.all
+        @reviews = Review.all #not nested
       end 
     end 
 
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
       @review = Review.new(review_params)
       @review = current_user.reviews.build(review_params)
       if @review.save
-      redirect_to review_path(@review)
+        redirect_to review_path(@review)
       else 
         render :new 
       end 

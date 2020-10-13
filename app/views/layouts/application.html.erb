@@ -10,14 +10,18 @@
   </head>
 
   <div>
-    ⎮<%= link_to "Home", root_path %>⎮
-    ⎮<%= link_to "Add a New Place", new_establishment_path%>⎮
-    ⎮<%= link_to "Add a Review", new_review_path%>⎮
-    ⎮<%= link_to "Browse Reviews", reviews_path%>⎮
-    ⎮<%= link_to "Browse Establishments", establishments_path%>⎮
-  
+    <% if logged_in? %>
+        ⎮<%= link_to "Home", root_path %>⎮
+        ⎮<%= link_to "Add a New Place", new_establishment_path%>⎮
+        ⎮<%= link_to "Add a Review", new_review_path%>⎮
+        ⎮<%= link_to "Browse Reviews", reviews_path%>⎮
+        ⎮<%= link_to "Browse Establishments", establishments_path%>⎮
+    <% else %>
+        ⎮<%= link_to "Home", root_path %>⎮
+        ⎮<%= link_to "Browse Reviews", reviews_path%>⎮
+        ⎮<%= link_to "Browse Establishments", establishments_path%>⎮
+    <% end %>
     
-
   </div>
 
   <body>
@@ -27,7 +31,9 @@
 
 <footer>
 <br><br>
-⎮<%= link_to "Log Out", logout_path, method: :delete %>⎮
+<% if logged_in? %>
+  ⎮<%= link_to "Log Out", logout_path, method: :delete %>⎮
+<% end %>
 </footer>
 
 
