@@ -30,21 +30,29 @@ class ReviewsController < ApplicationController
     end 
 
     def show
-      redirect_to_reviews
+      redirect_to reviews_path if !@review
     end 
 
     def edit
-      redirect_to_reviews
+      if @review && @review.user == current_user
+        render :edit
+      else 
+        redirect_to reviews_path 
+      end 
     end 
 
     def update
-      @review.update(review_params)
-      redirect_to review_path(@review)
+      if @review && @review.user == current_user
+        @review.update(review_params)
+        redirect_to review_path(@review)
+      else
+        redirect_to reviews_path
+      end 
     end 
 
     def destroy
       @review.destroy
-      redirect_to user_path(current_user)
+      redirect_to reviews_path 
     end 
 
   private
@@ -57,8 +65,5 @@ class ReviewsController < ApplicationController
       @review = Review.find_by(id: params[:id])
     end 
 
-    def redirect_to_reviews
-      redirect_to reviews_path if !@review
-    end 
     
 end
