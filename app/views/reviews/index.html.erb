@@ -1,15 +1,11 @@
 <% if @establishment %>
-   <h1><%= @establishment.name%> </h1>
-   <ul>
-      <% @establishment.name.reviews each do |r| %>
-         <li><%= link_to r.establishment.name, review_path(r)  %> <strong><%= r.overall_rating%> stars </strong></li> 
-      <% end %>
-      </ul>
+   <h1> <%= @establishment.name%> </h1> 
+      <p><%= link_to "Add a Review", new_establishment_review_path(@establishment)%></p> 
 <% else %>
 <h1>All Reviews </h1>
 <% end %> 
 <ul>
 <% @reviews.each do |r| %>
-   <li><%= link_to r.establishment.name, review_path(r)  %> <strong><%= r.overall_rating%> stars </strong></li> 
+   <li><%= r.user.username %> rated <%= r.establishment.name %> <strong><%= r.overall_rating%> stars </strong> <%= link_to "Go to review", review_path(r)%> </li>
 <% end %>
 </ul>
