@@ -16,3 +16,10 @@
 width=150" height="70"> -->
     <%= link_to c.name, category_path(c)%>
 <% end %>
+<br><br>
+<h3>Or search for an establishment in our database:</h3>
+<%= form_with url:"/search", local: :true do |f| %>
+    <%= f.label "Search:"%>
+    <%= f.text_field :q%>
+    <%= f.submit "Search"%>
+<% end %>
