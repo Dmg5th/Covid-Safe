@@ -16,6 +16,7 @@ class EstablishmentsController < ApplicationController
       if @establishment.save && @establishment.name != ""
         redirect_to establishment_path(@establishment)
       else 
+        @establishment.build_category
         render :new 
       end 
     end 
@@ -41,7 +42,7 @@ class EstablishmentsController < ApplicationController
 
 private 
     def establishment_params
-      params.require(:establishment).permit(:name, :location, :category_id, category_attributes: [:name])
+      params.require(:establishment).permit(:name, :location, :category_id, :image, category_attributes: [:name])
     end 
 
 

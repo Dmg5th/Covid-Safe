@@ -22,8 +22,11 @@
             <%= c.text_field :name %>
         <% end %>
     </div>
-    
-    
+    <p><strong>Upload a picture for this place:</strong> </p>
+    <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
     <br>
     <%= f.submit %>
 <% end %>
