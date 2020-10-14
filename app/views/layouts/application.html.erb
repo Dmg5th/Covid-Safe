@@ -8,26 +8,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <div>
-    <% if logged_in? %>
-        ⎮<%= link_to "Home", root_path %>⎮
-        ⎮<%= link_to "Add a New Place", new_establishment_path%>⎮
-        ⎮<%= link_to "Add a Review", new_review_path%>⎮
-        ⎮<%= link_to "Browse Reviews", reviews_path%>⎮
-        ⎮<%= link_to "NYC Establishments", establishments_path%>⎮
-        ⎮<%= link_to "My Reviews", user_path(current_user)%>⎮
-    <% else %>
-        ⎮<%= link_to "Home", root_path %>⎮
-        ⎮<%= link_to "Browse Reviews", reviews_path%>⎮
-        ⎮<%= link_to "NYC Establishments", establishments_path%>⎮
-    <% end %>
-    
-  </div>
-
   <body>
-    <%= yield %>
-  </body>
+    <nav>
+      <%= render 'layouts/navbar'%> 
+    </nav>
+    <main class="wrapper"> 
+      <%= yield %>
+    </main>
+   </body>
 </html>
 
 <footer>

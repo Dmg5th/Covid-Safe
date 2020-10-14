@@ -1,25 +1,15 @@
 <h1>🟦Welcome to Covid Safe!🟦</h1>
 <p>⎮Browse, or create reviews for your favorite establishments in NYC  based on how safe they are during Covid⎮</p> 
-<% if !logged_in? %>
-<p>
-    <%= link_to "Signup!", signup_path %>/?
-    
-    <%= link_to "Login", login_path%>
-    OR 
-    <%= link_to "Log In with Google", '/auth/google_oauth2' %> to make a review or add a new establishment
-</p> 
-<% end %>
-
-<h2>CATEGORIES</h2>
-<% @categories.each do |c| %>
-<!-- <img alt="Qries" src="https://images.unsplash.com/photo-1571204829887-3b8d69e4094d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-width=150" height="70"> -->
-    <%= link_to c.name, category_path(c)%>
-<% end %>
-<br><br> 
-<h3>Or search for an establishment in our database:</h3>
 <%= form_with url:"/search", local: :true do |f| %>
-    <%= f.label "Search:"%>
+    <%= f.label "Search establishments:"%>
     <%= f.text_field :q%>
     <%= f.submit "Search"%>
 <% end %>
+<br>
+
+<% @categories.each do |c| %> ⎮
+    <%= link_to c.name, category_path(c)%>
+<% end %>
+
+
+

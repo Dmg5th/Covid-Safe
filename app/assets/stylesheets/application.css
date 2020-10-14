@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+ .field_with_errors {
+     color: red;
+     text-decoration: red;
+ }  
+ a {
+    color: blue;
+    text-decoration: none;
+}
+h2 {
+    color: indianred;
+}
+
+p {
+    color: black;
+}
+
+.wrapper {
+    margin-top: 100px;
+}
+
+.header {
+    margin-top: -100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Sans', Arial;
+    display: flex;
+    background-color: whitesmoke;
+    position: fixed;
+    width: 100%;
+    opacity: 0.95;
+    box-shadow: 5px 2px #ebebeb;
+    z-index: 10; }
+    .header .title {
+        font-size: 24px;
+      height: 50px;
+      color: white;
+      background-color: indianred;
+      margin: 5px;
+      padding: 5px;}
+    .header .username {
+        margin: auto 5px auto auto;
+        flex: 1,2;}
+    .header .nav {
+        display: flex;
+        margin: 0 5px 0 5px; }
+    .header .nav div {
+        padding: 10px;
+        background-color: white;
+        margin: 10px; 
+        border-radius: 5px;}
+    .header .nav div a {
+        color: indianred;
+        text-decoration: none;}
+        .header .nav div:hover {
+            cursor: pointer;
+            background-color: goldenrod;
+            transition: 0.5s ease; }
+            .header .nav div:hover a {
+                color: white;}
+
+
+                
+        
+
+
