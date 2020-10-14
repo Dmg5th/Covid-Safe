@@ -4,8 +4,10 @@
 <% else %>
 <h1>All Reviews </h1>
 <% end %> 
-<ul>
-<% @reviews.each do |r| %>
-   <li><%= r.user.username %> rated <%= r.establishment.name %> <strong><%= r.overall_rating%> stars </strong> <%= link_to "Go to review", review_path(r)%> </li>
-<% end %>
-</ul>
+<div class="reviews">
+   <% @reviews.each do |r| %>
+      <div class="reviews_card">
+         <h3><%= r.user.username %> rated <%= r.establishment.name %> <strong><%= r.overall_rating%> stars </strong> <%= link_to "Go to review", review_path(r)%> </h3>
+      </div>
+   <% end %>
+</div>

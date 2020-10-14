@@ -7,8 +7,17 @@
     <%= f.text_field :q%>
     <%= f.submit "Search"%>
 <% end %>
-<div class="establishment-card">
-    <% @establishments.each do |e| %>
-      <h2> <%= link_to e.name, establishment_reviews_path(e)  %> - <%= e.category.name%> </h2> 
-  <% end %>
-</div>
+
+<% @establishments.each do |e| %>
+    <div class="establishment-card">
+        <div class="establishment-title">
+            <p><%= e.category.name%> </p> 
+        </div>
+        <div class="establishment-names">
+            <p><%= link_to e.name, establishment_reviews_path(e)%></p>
+        </div>
+        <div class="img">
+            <p><%= e.location%></p>
+        </div>
+    </div> 
+<% end %>

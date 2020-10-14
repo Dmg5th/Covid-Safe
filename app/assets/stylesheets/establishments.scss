@@ -27,3 +27,21 @@
     grid-column-end: 2;
     grid-row-end: 2;
 }
+
+.establishment-details {
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-end: 4;
+    grid-row-end: 2;
+}
+
+.img {
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-column-end: 4;
+    grid-row-end: 2;
+}

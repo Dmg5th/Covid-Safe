@@ -1,3 +1,13 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reviews_card {
+    margin: 15px;
+    padding: 20px;
+    background-color: whitesmoke;
+}
