@@ -30,7 +30,7 @@ class EstablishmentsController < ApplicationController
 
     def results
       @establishments = Establishment.search(params[:q])
-      if @establishments && @establishments != ""
+      if @establishments.exists? 
         render :index
       else 
         flash[:error] = "There are no establishments by this name"
