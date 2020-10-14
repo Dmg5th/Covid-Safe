@@ -1,9 +1,4 @@
 <h1>⎮<%= @establishment.name%>- <%= @establishment.category.name%>⎮</h1>
-
-<% if @establishment.image.attached? %> <%#Could be a good place for a helper%>
-    <%= image_tag url_for(@establishment.image)%>
-<% end %>
-
 <div>
     <p><strong><%= @establishment.location %></strong> </p>
 </div>

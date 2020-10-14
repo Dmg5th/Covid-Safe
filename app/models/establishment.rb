@@ -4,7 +4,7 @@ class Establishment < ApplicationRecord
     has_many :reviews
     has_many :users, through: :reviews 
     # accepts_nested_attributes_for :category
-    has_one_attached :image
+    # has_one_attached :image # not using at the moment but could come back to
     validates :name, presence: true
     validate :not_a_duplicate#try to come up with custom validation for this 
     scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(overall_rating) desc')}#scope method that I may or may not keep 

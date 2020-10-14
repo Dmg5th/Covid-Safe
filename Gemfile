@@ -27,6 +27,7 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 
 # Use Active Storage variant
+gem 'mini_magick', '~> 4.8'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
