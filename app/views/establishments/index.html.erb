@@ -7,6 +7,8 @@
     <%= f.text_field :q%>
     <%= f.submit "Search"%>
 <% end %>
+<div class="establishment-card">
     <% @establishments.each do |e| %>
       <h2> <%= link_to e.name, establishment_reviews_path(e)  %> - <%= e.category.name%> </h2> 
   <% end %>
+</div>

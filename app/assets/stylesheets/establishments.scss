@@ -1,3 +1,29 @@
 // Place all the styles related to the Establishments controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// You can use Sass (SCSS) here: https://sass-lang.com  /
+  
+.establishment-card{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px grey;
+    margin: 15px;
+    border-radius: 5px;
+}
+.establishment-title {
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-row-end: 2;
+}    
+
+.establishment-names {
+    padding-left: 10px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2;
+}
