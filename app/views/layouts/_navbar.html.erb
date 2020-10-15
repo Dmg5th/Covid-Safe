@@ -2,7 +2,7 @@
 <div class="title">Covid Safe</div>
     <% if current_user %>
         <div class="username">
-            <i>welcome, <%= current_user.username %></i>
+            <i>Welcome, <%= current_user.username %></i>
         </div>
     <% end %>
     <div class="nav">
@@ -16,9 +16,9 @@
         <div><%= link_to "Log Out", logout_path, method: :delete %></div>
     <% else %>
         <div><%= link_to "Home", root_path %></div>
-        <div><%= link_to "Signup! To make your own review", signup_path %></div>
-        <div><%= link_to "Login", login_path%></div>
-        <div><%= link_to "Or log In with Google", '/auth/google_oauth2' %> </div>
+        <div><%= link_to "Log in", login_path%></div>
+        <div><%= link_to "Signup!", signup_path %></div>
+        <div><%= link_to "Log In with Google", '/auth/google_oauth2' %> </div>
         <div><%= link_to "Browse Reviews", reviews_path%></div>
         <div><%= link_to "NYC Establishments", establishments_path%></div>
     <% end %>

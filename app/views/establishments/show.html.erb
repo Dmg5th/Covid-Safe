@@ -1,10 +1,15 @@
-<h1>⎮<%= @establishment.name%>- <%= @establishment.category.name%>⎮</h1>
-<div>
-    <p><strong><%= @establishment.location %></strong> </p>
+<div id="reviewvcontainer"></div>
+    <div id="reviewhcontainer">
+        <div id="reviewcontent">      
+        
+        <h2>⎮<%= @establishment.name%>- <%= @establishment.category.name%>⎮</h2>
+        <div>
+            <p><strong><%= @establishment.location %></strong> </p>
+        </div>
+        <br><br>
+        <%= link_to "See all Reviews", establishment_reviews_path(@establishment) %>
+        <br><br>
+        <%= link_to "Add a Review", new_establishment_review_path(@establishment)%>
+        </div>
+    </div>
 </div>
-<br><br>
-<%= link_to "See all Reviews", establishment_reviews_path(@establishment) %>
-<br><br>
-<%= link_to "Add a Review", new_establishment_review_path(@establishment)%>
-
-

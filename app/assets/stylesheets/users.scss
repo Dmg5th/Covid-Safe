@@ -1,3 +1,44 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#newvcontainer {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  #newhcontainer {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+  }
+  #newcontent {
+      padding-top: 100px;
+      padding-left: 200px;
+      padding-right: 200px;
+      height: 400px;
+      background-color:whitesmoke;
+      background-size: cover;
+      background-position: 50%;
+      align: center;
+      position: absolute;
+      top: 25%;
+      left: 30%;
+      justify-self: center;
+      align-self: center;
+      border-style: solid;
+      border-width: 0 2px 2px 2px;
+      background:whitesmoke;
+      box-shadow: inset 2px 2px 0 red, inset -2px -2px 0 black;
+    }
+
+    .users_title{
+    font-size: 40px;
+    margin-top: -100px;
+    height: 50px;
+    color: white;
+    background-color: indianred;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 200px;
+    
+  }

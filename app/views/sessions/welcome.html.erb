@@ -1,15 +1,22 @@
-<h1>🟦Welcome to Covid Safe!🟦</h1>
-<p>⎮Browse, or create reviews for your favorite establishments in NYC  based on how safe they are during Covid⎮</p> 
-<%= form_with url:"/search", local: :true do |f| %>
-    <%= f.label "Search establishments:"%>
-    <%= f.text_field :q%>
-    <%= f.submit "Search"%>
-<% end %>
-<br>
+<div id="vcontainer"></div>
+    <div id="hcontainer">
+        <div id="content">
+            <h1>🟥Welcome to Covid Safe!🟥</h1>
+                <p>⎮Browse, or create reviews for your favorite establishments in NYC  based on how safe they are during Covid⎮</p> 
+                <%= form_with url:"/search", local: :true do |f| %>
+                    <%= f.label "Search establishments:"%>
+                    <%= f.text_field :q%>
+                    <%= f.submit "Search"%>
+                <% end %>
+                <br>
 
-<% @categories.each do |c| %> ⎮
-    <%= link_to c.name, category_path(c)%>
-<% end %>
+                <% @categories.each do |c| %> ⎮
+                    <%= link_to c.name, category_path(c)%>
+                <% end %>
+        </div>
+    </div>
+</div>
+
 
 
 

@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com  /
   
+h4 {
+    font-size: 30px;
+    line-height: 1.28571em;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    color:white;
+}
+
 .establishment-card{
     display: grid;
     grid-gap: 10px;

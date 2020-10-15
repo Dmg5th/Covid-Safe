@@ -1,13 +1,13 @@
-<h1>NYC PLACES</h1>
+<h4>NYC PLACES</h4>
 
-<p><%= flash[:error] %></p><br>
-
+<h2><%= flash[:error] %></h2><br>
+<h2>
 <%= form_with url:"/search", local: :true do |f| %>
     <%= f.label "Search:"%>
     <%= f.text_field :q%>
     <%= f.submit "Search"%>
 <% end %>
-
+</h2>
 <% @establishments.each do |e| %>
     <div class="establishment-card">
         <div class="establishment-title">

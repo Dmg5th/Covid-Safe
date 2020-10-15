@@ -1,8 +1,8 @@
 <% if @establishment %>
-   <h1> <%= @establishment.name%> </h1> 
-      <p><%= link_to "Add a Review", new_establishment_review_path(@establishment)%></p> 
+   <h4> <%= @establishment.name%> </h4> 
+      <h4><%= link_to "Add a Review", new_establishment_review_path(@establishment)%></h4> 
 <% else %>
-<h1>All Reviews </h1>
+<h2>All Reviews </h2>
 <% end %> 
 <div class="reviews">
    <% @reviews.each do |r| %>

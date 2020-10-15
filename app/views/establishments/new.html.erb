@@ -1,32 +1,39 @@
-<h1>Add a new NYC place to the list!</h1>
+<div id="reviewvcontainer"></div>
+    <div id="reviewhcontainer">
+        <div id="reviewcontent">
 
-<%= render partial: 'layouts/errors', locals: {object: @establishment} %>
+        <h1>Add a new NYC place to the list!</h1>
 
-<%= form_for @establishment do |f| %>
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
-    <div>
-        <%= f.label :neighborhood %>
-        <%= f.text_field :location %>
-    </div>
-    <p>Select the type of Establishment</p>
-    <div>
-        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true  %>
-    </div>
-    <p>Create a new type of establishment if not featured above</p>
-    <div>
-        <%= f.fields_for :category do |c| %>
-            <%= c.label :name %>
-            <%= c.text_field :name %>
+        <%= render partial: 'layouts/errors', locals: {object: @establishment} %>
+
+        <%= form_for @establishment do |f| %>
+            <div>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+            </div>
+            <div>
+                <%= f.label :neighborhood %>
+                <%= f.text_field :location %>
+            </div>
+            <p>Select the type of Establishment</p>
+            <div>
+                <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true  %>
+            </div>
+            <p>Create a new type of establishment if not featured above</p>
+            <div>
+                <%= f.fields_for :category do |c| %>
+                    <%= c.label :name %>
+                    <%= c.text_field :name %>
+                <% end %>
+            </div>
+            <!-- <p><strong>Upload a picture for this place:</strong> </p>
+            <div>
+                <%= f.label :image %>
+                <%= f.file_field :image %>
+            </div> -->
+            <br>
+            <%= f.submit %>
         <% end %>
+        </div>
     </div>
-    <!-- <p><strong>Upload a picture for this place:</strong> </p>
-    <div>
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-    </div> -->
-    <br>
-    <%= f.submit %>
-<% end %>
+</div>

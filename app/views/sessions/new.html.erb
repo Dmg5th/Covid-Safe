@@ -1,15 +1,23 @@
-<h1>Log in!</h1>
+<div id="newvcontainer"></div>
+    <div id="newhcontainer">
+        <div id="newcontent">
 
-<p><%= flash[:error] %></p><br>
+            <div class="users_title">Log in!</div>
 
-<%= form_for(:user) do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-   
-    <%= f.submit "Log in"%>
-<% end %>
+            <div class="errors"><p><%= flash[:error] %></p></div><br>
+
+            <%= form_for(:user) do |f| %>
+                <%= f.label :username %>
+                <%= f.text_field :username %>
+                
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+            
+                <%= f.submit "Log in"%>
+            <% end %>
+
+        </div>
+    </div>
+</div>
 
 
