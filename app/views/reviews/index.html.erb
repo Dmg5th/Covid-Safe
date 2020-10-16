@@ -1,5 +1,5 @@
 <% if @establishment %>
-   <h4> <%= @establishment.name%> </h4> 
+   <h4> <%= @establishment.name%> - <%= @establishment.category.name %> </h4> 
       <h4><%= link_to "Add a Review", new_establishment_review_path(@establishment)%></h4> 
 <% else %>
 <h2>All Reviews </h2>
